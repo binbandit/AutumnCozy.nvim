@@ -164,53 +164,15 @@ end
 
 -- Cache compiled theme
 function M.cache_theme()
-  local cache_dir = vim.fn.stdpath("cache") .. "/autumncozy"
-  vim.fn.mkdir(cache_dir, "p")
-  local cache_file = cache_dir .. "/compiled_" .. config.get().variant .. ".vim"
-  
-  -- Get all current highlights
-  local highlights = {}
-  local hl_groups = vim.fn.getcompletion("", "highlight")
-  
-  for _, group in ipairs(hl_groups) do
-    local hl_def = vim.api.nvim_get_hl(0, { name = group })
-    if next(hl_def) then
-      highlights[group] = hl_def
-    end
-  end
-  
-  -- Write cache file
-  local file = io.open(cache_file, "w")
-  if file then
-    file:write("-- AutumnCozy compiled theme cache\n")
-    file:write("-- Variant: " .. config.get().variant .. "\n")
-    file:write("-- Generated: " .. os.date() .. "\n\n")
-    
-    for group, opts in pairs(highlights) do
-      local args = {}
-      for k, v in pairs(opts) do
-        if k == "fg" or k == "bg" or k == "sp" then
-          table.insert(args, k .. "=" .. v)
-        elseif type(v) == "boolean" and v then
-          table.insert(args, k)
-        end
-      end
-      if #args > 0 then
-        file:write("highlight " .. group .. " " .. table.concat(args, " ") .. "\n")
-      end
-    end
-    
-    file:close()
-  end
+  -- For now, disable caching to avoid issues
+  -- TODO: Implement proper caching mechanism
+  return
 end
 
 -- Load from cache if available
 function M.load_from_cache()
-  local cache_file = vim.fn.stdpath("cache") .. "/autumncozy/compiled_" .. config.get().variant .. ".vim"
-  if vim.fn.filereadable(cache_file) == 1 then
-    vim.cmd("source " .. cache_file)
-    return true
-  end
+  -- For now, disable cache loading to avoid issues
+  -- TODO: Implement proper caching mechanism
   return false
 end
 

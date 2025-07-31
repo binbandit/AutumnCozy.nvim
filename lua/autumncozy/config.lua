@@ -24,7 +24,7 @@ M.defaults = {
   on_highlights = function(hl, colors) end, -- Modify highlights after setup
   
   -- Performance options
-  cache = true,  -- Enable caching (not yet implemented)
+  cache = false,  -- Enable caching (disabled by default until properly implemented)
   
   -- Plugin-specific settings
   plugins = {

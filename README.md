@@ -82,7 +82,7 @@ require("autumncozy").setup({
   on_highlights = function(hl, colors) end, -- Modify highlights after setup
   
   -- Performance
-  cache = true,  -- Enable caching for faster load times
+  cache = false,  -- Caching (coming soon)
   
   -- Plugin-specific settings
   plugins = {
