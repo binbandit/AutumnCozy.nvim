@@ -264,6 +264,6 @@ function M.setup_extended_plugins(hl, colors, conf)
   hl("TroubleSignError", { fg = colors.red })
   hl("TroubleSignHint", { fg = colors.fg_dim })
   hl("TroubleSignOther", { fg = colors.blue_light })
-  
+end
 
 return M
