@@ -1,0 +1,18 @@
+# Backup files
+*.backup
+*.bak
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+
+# Neovim
+.luarc.json
+
+# Cache files (if any get created locally)
+*.cache
